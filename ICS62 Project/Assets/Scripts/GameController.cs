@@ -33,12 +33,13 @@ public class GameController : MonoBehaviour {
 	//IMPORTANT. Always have the GameObjects with the tag Firewall/Rain if using GameController script in
 	//scene
 	void Awake(){
-		AttachGameObject(fireWall, "Firewall");
-		AttachGameObject(rain, "Rain");
+		AttachGameObject(ref fireWall, "Firewall");
+		AttachGameObject(ref rain, "Rain");
 	}
 
 	// Use this for initialization
 	void Start () {
+
 		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
 		UpdateDebugText();
 		shellText.text = "";
@@ -50,6 +51,7 @@ public class GameController : MonoBehaviour {
 
 	
 		//BEGIN OF TEST. [REMOVE]
+		UpdateRainState(isRaining);
 		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
 		if(lapCount < 3)
 			IncLap();
@@ -59,7 +61,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	//Attaches gameobject with given name to given gameobject. 
-	void AttachGameObject(GameObject obj, string findName){
+	void AttachGameObject(ref GameObject obj, string findName){
 		obj = GameObject.FindWithTag(findName);
 		obj.SetActive(false);
 	}
