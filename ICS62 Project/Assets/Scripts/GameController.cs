@@ -15,13 +15,16 @@ public class GameController : MonoBehaviour {
 	public bool isRaining = false;
 
 	//In-Game Objects
+	GameObject logicPanel;						//For controlling when Logic Gate panel appears
 	GameObject fireWall;						//Prevents player from going over loop iteration
 	GameObject rain;							//Rain effect that activates if raining
+	
 
 	//GUI Text
 	public Text functionText;					//GUI Text for Function
 	public Text debugText;						//GUI Text for Debug
 	public Text shellText;						//GUI Text for Shell
+	public Text logicText;						//GUI Text for Logic
 
 	//Static Strings
 	static string funcStrFor = "for Lap in range ({0}):\n\tKeepRacing (Player_Var)\n" +
@@ -38,6 +41,7 @@ public class GameController : MonoBehaviour {
 	void Awake(){
 		AttachGameObject(ref fireWall, "Firewall");
 		AttachGameObject(ref rain, "Rain");
+		AttachGameObject(ref logicPanel, "LogicPanel");
 	}
 
 	// Use this for initialization
@@ -45,6 +49,7 @@ public class GameController : MonoBehaviour {
 		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
 		UpdateDebugText();
 		shellText.text = "";
+		logicText.text = "";
 	}
 	
 	// Update is called once per frame
