@@ -25,7 +25,10 @@ public class GameController : MonoBehaviour {
 
 	//Static Strings
 	static string funcStrFor = "for Lap in range ({0}):\n\tKeepRacing (Player_Var)\n" +
-		"\tif Player_Var {1} {2}:\n\t\tbreak";
+		"\tif Player_Var {1} {2}:\n" +
+		"\t\tPickUpToBreak ( )\n" +
+		"\telse:\n" +
+		"\t\tprint('Keep going!')";
 	static string gameVar = "Lap = {0}\nPlayer_Var = {1}\nisRaining = {2}";
 	static string printStatement = "Keep going!\n";
 
@@ -39,7 +42,6 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
 		UpdateDebugText();
 		shellText.text = "";
@@ -51,6 +53,7 @@ public class GameController : MonoBehaviour {
 
 	
 		//BEGIN OF TEST. [REMOVE]
+		//Debug.Log(BreakConditionMet());
 		UpdateRainState(isRaining);
 		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
 		if(lapCount < 3)
@@ -83,6 +86,18 @@ public class GameController : MonoBehaviour {
 		UpdateDebugText();
 	}
 
+	//Returns true if break condition is met. False if break condition is not met
+	public bool BreakConditionMet(){
+		switch(breakBool){
+			case "==": return playerVar == breakCondition;
+			case ">": return playerVar > breakCondition;
+			case "<": return playerVar < breakCondition;
+			case ">=": return playerVar >= breakCondition;
+			case "<=": return playerVar <= breakCondition;
+			case "!=": return playerVar != breakCondition;
+			default: return false;
+		}
+	}
 
 
 }
