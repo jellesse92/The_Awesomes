@@ -14,7 +14,11 @@ public class GameController : MonoBehaviour {
 	public int playerVar = 0;
 	public bool isRaining = false;
 
-	//GUI Objects
+	//In-Game Objects
+	GameObject fireWall;
+
+
+	//GUI Text
 	public Text functionText;					//GUI Text for Function
 	public Text debugText;						//GUI Text for Debug
 	public Text shellText;						//GUI Text for Shell
@@ -25,12 +29,16 @@ public class GameController : MonoBehaviour {
 	static string gameVar = "Lap = {0}\nPlayer_Var = {1}\nisRaining = {2}";
 	static string printStatement = "Keep going!\n";
 
+	void Awake(){
+		fireWall = GameObject.FindWithTag("Firewall");
+		fireWall.SetActive(false);
+	}
+
 	// Use this for initialization
 	void Start () {
 		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
 		debugText.text = string.Format(gameVar,lapCount,playerVar,isRaining);
 		shellText.text = "";
-
 	}
 	
 	// Update is called once per frame
@@ -42,6 +50,8 @@ public class GameController : MonoBehaviour {
 		debugText.text = string.Format(gameVar,lapCount,playerVar,isRaining);
 		if(lapCount < 3)
 			IncLap();
+		if(lapCount == rangeEnd)
+			fireWall.SetActive(true);
 		//END OF TEST
 	}
 
