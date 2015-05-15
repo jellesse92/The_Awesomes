@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour {
 	public bool isRaining = false;
 
 	//In-Game Objects
-	GameObject fireWall;
+	GameObject fireWall;						//Prevents player from going over loop iteration
 
 
 	//GUI Text
@@ -37,22 +37,27 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
-		debugText.text = string.Format(gameVar,lapCount,playerVar,isRaining);
+		UpdateDebugText();
 		shellText.text = "";
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		UpdateDebugText();
 
-		//REMOVE EVENTUALLY
-		//BEGIN OF TEST
+	
+		//BEGIN OF TEST. [REMOVE]
 		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
-		debugText.text = string.Format(gameVar,lapCount,playerVar,isRaining);
 		if(lapCount < 3)
 			IncLap();
 		if(lapCount == rangeEnd)
 			fireWall.SetActive(true);
 		//END OF TEST
+	}
+
+	//Updates GUI text display for the debugger view
+	public void UpdateDebugText(){
+		debugText.text = string.Format(gameVar,lapCount,playerVar,isRaining);
 	}
 
 	//Increments the Lap count and prints the debug string
