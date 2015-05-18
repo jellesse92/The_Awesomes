@@ -21,10 +21,12 @@ public class GameController : MonoBehaviour {
 	
 
 	//GUI Text
-	public Text functionText;					//GUI Text for Function
-	public Text debugText;						//GUI Text for Debug
-	public Text shellText;						//GUI Text for Shell
-	public Text logicText;						//GUI Text for Logic
+	//public Text logicText;						//GUI Text for Logic
+
+	public InstantGuiTextArea functionText;		//GUI Text for Function
+	public InstantGuiTextArea debugText;		//GUI Text for Debug
+	public InstantGuiTextArea shellText;		//GUI Text for Shell
+
 
 	//Static Strings
 	static string funcStrFor = "for Lap in range ({0}):\n\tKeepRacing (Player_Var)\n" +
@@ -39,17 +41,18 @@ public class GameController : MonoBehaviour {
 	//IMPORTANT. Always have the GameObjects with the tag Firewall/Rain if using GameController script in
 	//scene
 	void Awake(){
+		functionText.rawText = "D";
 		AttachGameObject(ref fireWall, "Firewall");
 		AttachGameObject(ref rain, "Rain");
-		AttachGameObject(ref logicPanel, "LogicPanel");
 	}
 
 	// Use this for initialization
 	void Start () {
-		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
+
+		functionText.rawText = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
 		UpdateDebugText();
-		shellText.text = "";
-		logicText.text = "";
+		shellText.rawText = "";
+		//logicText.text = "";
 	}
 	
 	// Update is called once per frame
@@ -76,7 +79,7 @@ public class GameController : MonoBehaviour {
 
 	//Updates GUI text display for the debugger view
 	public void UpdateDebugText(){
-		debugText.text = string.Format(gameVar,lapCount,playerVar,isRaining);
+		debugText.rawText = string.Format(gameVar,lapCount,playerVar,isRaining);
 	}
 
 	//Increments the Lap count and prints the debug string
