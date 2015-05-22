@@ -29,8 +29,6 @@ public class LogicSetController : MonoBehaviour {
 	public void ActivateLogicSet(){
 		if(currentLap != gc.lapCount)
 			currentLap = gc.lapCount;
-			gc.SetLogicText("moo");
-			logicPanelText.text = " ASDASd";
 			GenerateFunction();
 	}
 
@@ -47,12 +45,12 @@ public class LogicSetController : MonoBehaviour {
 			case 0:
 				int compareTo = 5;
 				logicPanelText.text = string.Format("\tRaining = eval('{0}' + Gate[n] + 'Player_Var')",compareTo);
-				gc.SetLogicText("Raining =\n " +
-								"\teval('5' + ___ + '2')\n" +
+				gc.SetLogicText(string.Format("Raining =\n " +
+			                              "\teval('5' + ___ + '{0}')\n" +
 								"\n\tFill in the Blank:\n" +
 				                "\tGate[0] = '<'\n" +
 				                "\tGate[1] = '=='\n" +
-				                "\tGate[2] = '>'\n");
+				                "\tGate[2] = '>'\n",gc.playerVar));
 				break;
 
 			default: break;
