@@ -1078,7 +1078,7 @@ MonoBehaviour:
   pointed: 0
   pointedOnBackground: 0
   pointedTime: 0
-  unpointedTime: .000489999773
+  unpointedTime: .000569999916
   disabled: 0
   activated: 0
   pressed: 0
@@ -1436,6 +1436,26 @@ Prefab:
     - target: {fileID: 191628, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
       propertyPath: m_Name
       value: Logic Gates
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408502, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408502, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408502, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408502, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408502, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
@@ -2219,7 +2239,7 @@ MonoBehaviour:
   pointed: 0
   pointedOnBackground: 0
   pointedTime: 0
-  unpointedTime: .0024900008
+  unpointedTime: .00257000141
   disabled: 0
   activated: 0
   pressed: 0
@@ -2422,7 +2442,7 @@ MonoBehaviour:
   pointed: 0
   pointedOnBackground: 0
   pointedTime: 0
-  unpointedTime: .00250000088
+  unpointedTime: .00258000148
   disabled: 0
   activated: 0
   pressed: 0
@@ -2657,7 +2677,7 @@ MonoBehaviour:
   pointed: 0
   pointedOnBackground: 0
   pointedTime: 0
-  unpointedTime: 0
+  unpointedTime: 7.9999998e-05
   disabled: 0
   activated: 0
   pressed: 0
@@ -4163,7 +4183,7 @@ MonoBehaviour:
     isStyle: 0
   relative:
     left: 0
-    right: 27
+    right: 35
     top: 50
     bottom: 100
     isStyle: 0
@@ -4186,7 +4206,7 @@ MonoBehaviour:
   pointed: 0
   pointedOnBackground: 0
   pointedTime: 0
-  unpointedTime: .00250000088
+  unpointedTime: .00258000148
   disabled: 0
   activated: 0
   pressed: 0
@@ -4373,7 +4393,7 @@ MonoBehaviour:
   pointed: 0
   pointedOnBackground: 0
   pointedTime: 0
-  unpointedTime: .00250000088
+  unpointedTime: .00258000148
   disabled: 0
   activated: 0
   pressed: 0

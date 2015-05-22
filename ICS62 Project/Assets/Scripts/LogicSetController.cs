@@ -34,14 +34,25 @@ public class LogicSetController : MonoBehaviour {
 			GenerateFunction();
 	}
 
+	//After player passes under the gate, briefly shows the result of the answer
+	//For example Raining = Gate[n](player) becomes Raining = False (Assuming Gate[n](player) was a false statement)
+	public void ShowResult(){
+
+	}
+
 	void GenerateFunction(){
 		int random_num = 0;
 
 		switch(random_num){
 			case 0:
-				logicPanelText.text = "\tRaining = Something";
-				gc.SetLogicText("Raining = Something\n" +
-				                "\tGate1 =");
+				int compareTo = 5;
+				logicPanelText.text = string.Format("\tRaining = eval('{0}' + Gate[n] + 'Player_Var')",compareTo);
+				gc.SetLogicText("Raining =\n " +
+								"\teval('5' + ___ + '2')\n" +
+								"\n\tFill in the Blank:\n" +
+				                "\tGate[0] = '<'\n" +
+				                "\tGate[1] = '=='\n" +
+				                "\tGate[2] = '>'\n");
 				break;
 
 			default: break;

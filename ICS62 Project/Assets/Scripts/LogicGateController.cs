@@ -27,6 +27,7 @@ public class LogicGateController : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider obj){
+		lsc.ShowResult();
 		if (obj.tag == "Player")
 			IrisMesh.material = DefaultMat;
 	}
