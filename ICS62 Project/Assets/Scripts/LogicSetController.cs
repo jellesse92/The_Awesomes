@@ -10,7 +10,7 @@ public class LogicSetController : MonoBehaviour {
 	public bool[] Answers;								//Applies logic for each gate
 	
 	Text logicPanelText;								//For changing what displays in the logic text
-	int Question;										//Question type
+	int Question = 0;									//Question type
 															//0 == Control Raining Condition
 															//1 == Change PlayerVar
 	
@@ -41,25 +41,20 @@ public class LogicSetController : MonoBehaviour {
 	}
 
 
-	//CLEANING
+	//WIP
+	//Generates random function for billboard
 	void GenerateFunction(){
 		int random_num = 0;
-		int Question = 0;
+		int compareTo = Random.Range(0,10);
 		string[] setGateValues = {"","",""};				
 		switch(Question){
 			case 0:
-				switch(random_num){
-					case 0:
-						int compareTo = Random.Range(0,10);
-						logicPanelText.text = string.Format("\tRaining = eval('{0}' + Gate[n] + 'Player_Var')",compareTo);
-						gc.SetLogicText(string.Format("Raining =\n " +
-					                              "\teval('{0}' + Gate[ n ] + '{1}')\n\n" +
-					                              "\tGate = [\"<\", \"==\", \">\"]\n" +
-										"\n\tSelect the Index\n",compareTo,gc.playerVar));
-						break;
-					default: break;
-				}
-			break;
+				logicPanelText.text = string.Format("\tRaining = eval('{0}' + Gate[ n ] + 'Player_Var')",compareTo);
+				gc.SetLogicText(string.Format("Raining =\n " +
+					                          "\teval('{0}' + Gate[ n ] + '{1}')\n\n" +
+					                          "\tGate = [\"<\", \"==\", \">\"]\n" +
+											  "\n\tSelect the Index\n",compareTo,gc.playerVar));
+				break;
 			default: break;
 		}
 	}
