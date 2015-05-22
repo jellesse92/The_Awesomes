@@ -36,7 +36,6 @@ public class GameController : MonoBehaviour {
 	static string gameVar = "Lap = {0}\nPlayer_Var = {1}\nisRaining = {2}";
 	static string printStatement = "Keep going!\n";
 
-
 	//IMPORTANT. Always have the GameObjects with the tag Firewall/Rain if using GameController script in
 	//scene
 	void Awake(){
@@ -78,6 +77,11 @@ public class GameController : MonoBehaviour {
 	//Updates GUI text display for the debugger view
 	public void UpdateDebugText(){
 		debugText.rawText = string.Format(gameVar,lapCount,playerVar,isRaining);
+	}
+
+	public void SetLogicText(string str){
+		logicPanel.SetActive(true);
+		logicText.rawText = str;
 	}
 
 	//Increments the Lap count and prints the debug string

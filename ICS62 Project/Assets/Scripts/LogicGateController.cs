@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class LogicGateController : MonoBehaviour {
-
-	//For applying logic
-	GameController gc;							//Accesses control script to get variable information
+	LogicSetController lsc;
 
 	//Iris colors
 	MeshRenderer IrisMesh;						//Gets mesh renderer of iris to change
@@ -12,12 +10,15 @@ public class LogicGateController : MonoBehaviour {
 	public Material TrueMat;					//Changes iris color if answer was True
 	Material DefaultMat;						//Sets iris to default color
 
-
 	// Use this for initialization
 	void Awake () {
-		gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+		lsc = transform.parent.parent.GetComponent<LogicSetController>();	//Would use .root if we weren't going to child this to the track
 		IrisMesh = transform.GetComponent<MeshRenderer>();
 		DefaultMat = IrisMesh.material;
+	}
+
+	void OnBecameVisible(){
+		lsc.ActivateLogicSet();
 	}
 
 	void OnTriggerEnter(Collider obj){
