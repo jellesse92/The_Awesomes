@@ -10,7 +10,7 @@ public class LogicSetController : MonoBehaviour {
 
 	Text logicPanelText;						//For changing what displays in the logic text
 	string logicText = "";						//For setting string display on user incoming logic display and billboard
-
+	bool[] Answers;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +36,10 @@ public class LogicSetController : MonoBehaviour {
 	//For example Raining = Gate[n](player) becomes Raining = False (Assuming Gate[n](player) was a false statement)
 	public void ShowResult(){
 
+	}
+
+	void AnswerQuestion(int index){
+		ShowResult();
 	}
 
 	void GenerateFunction(){

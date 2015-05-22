@@ -1764,6 +1764,18 @@ Prefab:
       propertyPath: m_Name
       value: Logic Gates
       objectReference: {fileID: 0}
+    - target: {fileID: 105850, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
+      propertyPath: m_Name
+      value: Iris0
+      objectReference: {fileID: 0}
+    - target: {fileID: 179470, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
+      propertyPath: m_Name
+      value: Iris1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137598, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
+      propertyPath: m_Name
+      value: Iris2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
   m_IsPrefabParent: 0
