@@ -15,17 +15,16 @@ public class GameController : MonoBehaviour {
 	public bool isRaining = false;
 
 	//In-Game Objects
-	GameObject logicPanel;						//For controlling when Logic Gate panel appears
+	public GameObject logicPanel;				//For controlling when Logic Gate panel appears
 	GameObject fireWall;						//Prevents player from going over loop iteration
 	GameObject rain;							//Rain effect that activates if raining
 	
 
 	//GUI Text
-	//public Text logicText;						//GUI Text for Logic
-
 	public InstantGuiTextArea functionText;		//GUI Text for Function
 	public InstantGuiTextArea debugText;		//GUI Text for Debug
 	public InstantGuiTextArea shellText;		//GUI Text for Shell
+	public InstantGuiTextArea logicText;		//GUI Text for Logic
 
 
 	//Static Strings
@@ -41,18 +40,17 @@ public class GameController : MonoBehaviour {
 	//IMPORTANT. Always have the GameObjects with the tag Firewall/Rain if using GameController script in
 	//scene
 	void Awake(){
-		functionText.rawText = "D";
 		AttachGameObject(ref fireWall, "Firewall");
 		AttachGameObject(ref rain, "Rain");
+		AttachGameObject(ref logicPanel, "LogicPanel");
 	}
 
 	// Use this for initialization
 	void Start () {
-
 		functionText.rawText = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
 		UpdateDebugText();
 		shellText.rawText = "";
-		//logicText.text = "";
+		logicText.rawText = "";
 	}
 	
 	// Update is called once per frame

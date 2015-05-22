@@ -13,15 +13,12 @@ public class LogicGateController : MonoBehaviour {
 	Material DefaultMat;						//Sets iris to default color
 
 
-
-
 	// Use this for initialization
 	void Awake () {
 		gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 		IrisMesh = transform.GetComponent<MeshRenderer>();
 		DefaultMat = IrisMesh.material;
 	}
-	
 
 	void OnTriggerEnter(Collider obj){
 		if (obj.tag == "Player")
