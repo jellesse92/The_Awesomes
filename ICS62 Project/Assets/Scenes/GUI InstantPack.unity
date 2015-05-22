@@ -930,33 +930,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1568578351}
   m_RootOrder: 1
---- !u!1 &320583640
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 320583641}
-  m_Layer: 0
-  m_Name: Logic2Gate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &320583641
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 320583640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
 --- !u!1 &348906768
 GameObject:
   m_ObjectHideFlags: 1
@@ -1758,23 +1731,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 414260, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 191628, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
       propertyPath: m_Name
       value: Logic Gates
       objectReference: {fileID: 0}
-    - target: {fileID: 105850, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
-      propertyPath: m_Name
-      value: Iris0
-      objectReference: {fileID: 0}
-    - target: {fileID: 179470, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
-      propertyPath: m_Name
-      value: Iris1
-      objectReference: {fileID: 0}
-    - target: {fileID: 137598, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
-      propertyPath: m_Name
-      value: Iris2
+    - target: {fileID: 11421092, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
+      propertyPath: Answers.Array.data[1]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55dc97cb1f3e04644ba3cf26f19f42a9, type: 2}
@@ -2626,7 +2591,7 @@ Transform:
   - {fileID: 1495270304}
   - {fileID: 1475844655}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!114 &916805972
 MonoBehaviour:
   m_ObjectHideFlags: 0

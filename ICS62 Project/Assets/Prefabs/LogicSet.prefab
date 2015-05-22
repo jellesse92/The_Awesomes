@@ -13,7 +13,7 @@ GameObject:
   - 64: {fileID: 6420336}
   - 114: {fileID: 11469148}
   m_Layer: 0
-  m_Name: Iris
+  m_Name: Iris1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ GameObject:
   - 4: {fileID: 462392}
   - 95: {fileID: 9593210}
   m_Layer: 0
-  m_Name: Logic Gate[2]
+  m_Name: Logic Gate[0]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ GameObject:
   - 64: {fileID: 6485142}
   - 114: {fileID: 11426496}
   m_Layer: 0
-  m_Name: Iris
+  m_Name: Iris0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +186,7 @@ GameObject:
   - 4: {fileID: 420776}
   - 95: {fileID: 9599512}
   m_Layer: 0
-  m_Name: Logic Gate[1]
+  m_Name: Logic Gate[2]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ GameObject:
   - 4: {fileID: 406766}
   - 95: {fileID: 9596798}
   m_Layer: 0
-  m_Name: Logic Gate[0]
+  m_Name: Logic Gate[1]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ GameObject:
   - 64: {fileID: 6462118}
   - 114: {fileID: 11480722}
   m_Layer: 0
-  m_Name: Iris
+  m_Name: Iris2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -811,6 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306414a8c83c1394e8b4efaf0300febb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Answers: 000100
 --- !u!114 &11426000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -849,7 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FalseMat: {fileID: 2100000, guid: 6cfe5045238fd744786d8974b1aa5d14, type: 2}
-  TrueMat: {fileID: 2100000, guid: 45c3b38c40f75c24494678bab12ce1b9, type: 2}
+  TrueMat: {fileID: 2100000, guid: e5c3645c48e265e478c03e3e1ef5494b, type: 2}
 --- !u!114 &11433192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -888,7 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FalseMat: {fileID: 2100000, guid: 6cfe5045238fd744786d8974b1aa5d14, type: 2}
-  TrueMat: {fileID: 2100000, guid: 45c3b38c40f75c24494678bab12ce1b9, type: 2}
+  TrueMat: {fileID: 2100000, guid: e5c3645c48e265e478c03e3e1ef5494b, type: 2}
 --- !u!114 &11472474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -943,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FalseMat: {fileID: 2100000, guid: 6cfe5045238fd744786d8974b1aa5d14, type: 2}
-  TrueMat: {fileID: 2100000, guid: 45c3b38c40f75c24494678bab12ce1b9, type: 2}
+  TrueMat: {fileID: 2100000, guid: e5c3645c48e265e478c03e3e1ef5494b, type: 2}
 --- !u!222 &22202552
 CanvasRenderer:
   m_ObjectHideFlags: 1

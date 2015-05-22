@@ -5,13 +5,15 @@ using UnityEngine.UI;
 public class LogicSetController : MonoBehaviour {
 
 	//For applying logic
-	GameController gc;							//Accesses control script to get variable information
-	int currentLap = -1;						//To prevent reset if player turns camera away from gates and board
-
-	Text logicPanelText;						//For changing what displays in the logic text
-	string logicText = "";						//For setting string display on user incoming logic display and billboard
-	bool[] Answers;
-
+	GameController gc;									//Accesses control script to get variable information
+	int currentLap = -1;								//To prevent reset if player turns camera away from gates and board
+	public bool[] Answers;								//Applies logic for each gate
+	
+	Text logicPanelText;								//For changing what displays in the logic text
+	int Question;										//Question type
+															//0 == Control Raining Condition
+															//1 == Change PlayerVar
+	
 	// Use this for initialization
 	void Start () {
 		gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
@@ -38,28 +40,46 @@ public class LogicSetController : MonoBehaviour {
 
 	}
 
-	void AnswerQuestion(int index){
+	public void AnswerQuestion(bool state){
+		if(Question == 0)							//If the question was to set Raining state,
+			gc.UpdateRainState(state);				//set raining state based on bool answer
 		ShowResult();
 	}
 
+
+	//CLEANING
 	void GenerateFunction(){
 		int random_num = 0;
-
-		switch(random_num){
+		int Question = 0;
+		string[] setGateValues = {"","",""};				
+		switch(Question){
 			case 0:
-				int compareTo = 5;
-				logicPanelText.text = string.Format("\tRaining = eval('{0}' + Gate[n] + 'Player_Var')",compareTo);
-				gc.SetLogicText(string.Format("Raining =\n " +
-			                              "\teval('5' + ___ + '{0}')\n" +
-								"\n\tFill in the Blank:\n" +
-				                "\tGate[0] = '<'\n" +
-				                "\tGate[1] = '=='\n" +
-				                "\tGate[2] = '>'\n",gc.playerVar));
-				break;
-
+				switch(random_num){
+					case 0:
+						int compareTo = Random.Range(0,10);
+						logicPanelText.text = string.Format("\tRaining = eval('{0}' + Gate[n] + 'Player_Var')",compareTo);
+						gc.SetLogicText(string.Format("Raining =\n " +
+					                              "\teval('{0}' + Gate[ n ] + '{1}')\n\n" +
+					                              "\tGate = [\"<\", \"==\", \">\"]\n" +
+										"\n\tSelect the Index\n",compareTo,gc.playerVar));
+						break;
+					default: break;
+				}
+			break;
 			default: break;
 		}
 	}
+	/***
+	gc.SetLogicText(string.Format("Raining =\n " +
+	                              "\teval('{0}' + ___ + '{1}')\n" +
+	                              "\tGate = [\"<\", \"==\", \">\"]\n" +
+	                              "\n\tFill in the Blank:\n" +
+	                              "\tGate[0] = '<'\n" +
+	                              "\tGate[1] = '=='\n" +
+	                              "\tGate[2] = '>'\n",compareTo,gc.playerVar));
+	                              ***/
+
+
 
 
 }
