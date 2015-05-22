@@ -8,6 +8,9 @@ TagManager:
   - Rain
   - LogicPanel
   - FunctionText
+  - Break
+  - PlusEQ
+  - MinusEQ
   layers:
   - Default
   - TransparentFX
