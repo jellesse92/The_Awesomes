@@ -19,12 +19,6 @@ public class LogicSetController : MonoBehaviour {
 		gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 		logicPanelText = transform.Find("Logic Board/LogicBoardPanel/LogicBoardText").gameObject.GetComponent<Text>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-
-
-	}
 
 	//Called every time an element of the gate becomes visible from the camera view. May reset every time
 	//its called without the "if" statement that allows the reset only when the player has made another lap

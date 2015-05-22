@@ -28,15 +28,21 @@ public class LogicGateController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider obj){
 		if (obj.tag == "Player")
-			if (booleanState)
-				IrisMesh.material = TrueMat;
-			else
-				IrisMesh.material = FalseMat;
+			StartCoroutine("ColorChange");
+	}
+
+	//Delays gate resetting color back to default
+	IEnumerator ColorChange(){
+		if (booleanState)
+			IrisMesh.material = TrueMat;
+		else
+			IrisMesh.material = FalseMat;
+		yield return new WaitForSeconds(3.0f);
+		IrisMesh.material = DefaultMat;
 	}
 
 	void OnTriggerExit(Collider obj){
 		if (obj.tag == "Player"){
-			IrisMesh.material = DefaultMat;
 			lsc.AnswerQuestion(booleanState);
 		}
 	}
