@@ -8,6 +8,7 @@ public class PickUp : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+		print ("Started");
 	}
 	
 	// Update is called once per frame
@@ -16,18 +17,20 @@ public class PickUp : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-		if (obj.tag == "Break") {
-			gc.playerVar = gc.breakCondition;
-			gameObject.SetActive (false);
-		} 
-		if (obj.tag == "PlusEQ") {
-			gc.playerVar += 1;
-			gameObject.SetActive (false);
-		}
-		if (obj.tag == "MinusEQ") {
-			gc.playerVar -=1;
-			gameObject.SetActive (false);
+		print ("hi");
+		if (obj.gameObject.CompareTag("Player")) {
+			if (gameObject.tag == "Break") {
+				gc.playerVar = gc.breakCondition;
+				gameObject.transform.parent.gameObject.SetActive (false);
+			} 
+			else if (gameObject.tag == "PlusEQ") {
+				gc.playerVar += 1;
+				gameObject.transform.parent.gameObject.SetActive (false);
+			}
+			else if (gameObject.tag == "MinusEQ") {
+				gc.playerVar -= 1;
+				gameObject.transform.parent.gameObject.SetActive (false);
+			}
 		}
 	}
-
 }
