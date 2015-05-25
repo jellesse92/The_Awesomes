@@ -4,7 +4,8 @@ using System.Collections;
 public class VehicleMovement : MonoBehaviour {
 
 	public float speed;
-	public float turnSpeed; 
+	public float strafe; 
+	public float turnSpeed;
 	//public float groundDist;
 	private Rigidbody rb;
 	private float groundDist;
@@ -21,7 +22,6 @@ public class VehicleMovement : MonoBehaviour {
 		if (Physics.Raycast(transform.position, Vector3.down, out rcHit)){
 			groundDist = rcHit.distance;
 			//transform.rotation = Quaternion.FromToRotation(Vector3.up, rcHit.normal);
-
 			newPosition = (newPosition - groundDist) + 1;
 
 		}
@@ -29,12 +29,13 @@ public class VehicleMovement : MonoBehaviour {
 
 		if (Input.GetKey(KeyCode.W)){
 			transform.Translate(0.0f,0.0f, speed * Time.deltaTime);
+			transform.Rotate(0.0f, -(turnSpeed) * Time.deltaTime, 0.0f);
 		}
 		if (Input.GetKey(KeyCode.A)){
-			transform.Rotate (0.0f, -turnSpeed * Time.deltaTime, 0.0f);
+			transform.Translate(-strafe * Time.deltaTime, 0.0f, 0.0f);
 		}
 		if (Input.GetKey(KeyCode.D)){
-			transform.Rotate (0.0f, turnSpeed * Time.deltaTime, 0.0f);
+			transform.Translate(strafe * Time.deltaTime, 0.0f, 0.0f);
 		}
 		if (Input.GetKey(KeyCode.S))
 			rb.AddForce (-(transform.forward) * (speed/4)*Time.deltaTime);
