@@ -27,7 +27,7 @@ public class LogicGateController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-		if (obj.tag == "Player")
+		if (obj.tag == "Player" && !lsc.sameLap)
 			StartCoroutine("ColorChange");
 	}
 
@@ -42,7 +42,7 @@ public class LogicGateController : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider obj){
-		if (obj.tag == "Player"){
+		if (obj.tag == "Player" && !lsc.sameLap){
 			lsc.AnswerQuestion(booleanState);
 		}
 	}

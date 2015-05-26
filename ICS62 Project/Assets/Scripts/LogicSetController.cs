@@ -7,6 +7,7 @@ public class LogicSetController : MonoBehaviour {
 	//For applying logic
 	GameController gc;									//Accesses control script to get variable information
 	int currentLap = -1;								//To prevent reset if player turns camera away from gates and board
+	public bool sameLap = false;						//To prevent reapplying logic for iris triggers on same lap
 	public bool[] Answers;								//Applies logic for each gate
 	
 	Text logicPanelText;								//For changing what displays in the logic text
@@ -37,6 +38,7 @@ public class LogicSetController : MonoBehaviour {
 	public void AnswerQuestion(bool state){
 		if(Question == 0)							//If the question was to set Raining state,
 			gc.UpdateRainState(state);				//set raining state based on bool answer
+		sameLap = true;
 		ShowResult();
 	}
 
