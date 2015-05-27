@@ -9,6 +9,7 @@ public class LogicSetController : MonoBehaviour {
 	int currentLap = -1;								//To prevent reset if player turns camera away from gates and board
 	public bool sameLap = false;						//To prevent reapplying logic for iris triggers on same lap
 	public bool[] Answers;								//Applies logic for each gate
+	string[] compValues = {"<","==",">"};				//Gate values for comparison
 	
 	Text logicPanelText;								//For changing what displays in the logic text
 	int compareTo;										//Value to compare to player variable
@@ -76,9 +77,9 @@ public class LogicSetController : MonoBehaviour {
 			                              "\teval('{0}' + _ + '{1}')\n" +
 			                              "\n\tGate = [\"<\", \"==\", \">\"]\n\n" +
 			                              "\tFill in the Blank:\n" +
-			                              "\tGate[0] = '<'\n" +
-			                              "\tGate[1] = '=='\n" +
-			                              "\tGate[2] = '>'\n",compareTo,gc.playerVar));
+			                              "\tGate[0] = '{2}'\n" +
+			                              "\tGate[1] = '{3}'\n" +
+			                              "\tGate[2] = '{4}'\n",compareTo,gc.playerVar,compValues[0],compValues[1],compValues[2]));
 				break;
 			default: break;
 		}
