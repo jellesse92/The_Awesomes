@@ -13,6 +13,7 @@ public class LogicSetController : MonoBehaviour {
 	
 	Text logicPanelText;								//For changing what displays in the logic text
 	int compareTo;										//Value to compare to player variable
+	int wasPlayerVar;									//Gets player var at time question initiated
 	int Question = 0;									//Question type
 															//0 == Control Raining Condition
 															//1 == Change PlayerVar
@@ -35,39 +36,33 @@ public class LogicSetController : MonoBehaviour {
 	//For example Raining = Gate[n](player) becomes Raining = False (Assuming Gate[n](player) was a false statement)
 
 
-	IEnumerator ShowResult(bool state){
-		gc.SetLogicText("");
-		yield return new WaitForSeconds (1.0f);
-
+	IEnumerator ShowResult(int state){
 		switch(Question){
 		case 0:
-			gc.SetLogicText(string.Format("Raining = " +
-			    "\t{0} {1} {2})\n" +
-			    "\tGate = [\"<\", \"==\", \">\"]\n" +
-				"\nSelect the Index:\n" +
-			    "\tGate[0] = <\n" +
-			    "\tGate[1] = ==\n" +
-			    "\tGate[2] = >\n", compareTo,"==" ,gc.playerVar));
+			gc.SetLogicText(string.Format("RESULT:\n" +
+			    "Gate[{4}] = '{1}'\n" +
+				"Raining = " +
+			    "{0} {1} {2}\n\n" +
+			    "Setting Raining to: {3}\n\n", compareTo,compValues[state] ,gc.playerVar,Answers[state],state));
 			break;
 		default: break;
 		}
 	
-		yield return new WaitForSeconds(5.0f);
+		yield return new WaitForSeconds(6.0f);
 		gc.logicPanel.SetActive(false);
 	}
 
-	public void AnswerQuestion(bool state){
+	public void AnswerQuestion(int index){
 		if(Question == 0)							//If the question was to set Raining state,
-			gc.UpdateRainState(state);				//set raining state based on bool answer
+			gc.UpdateRainState(Answers[index]);				//set raining state based on bool answer
 		sameLap = true;
-		StartCoroutine(ShowResult(state));
+		StartCoroutine(ShowResult(index));
 	}
 
 
 	//WIP
 	//Generates random function for billboard
 	void GenerateFunction(){
-		int random_num = 0;
 		compareTo = Random.Range(0,10);
 		string[] setGateValues = {"","",""};				
 		switch(Question){
@@ -83,10 +78,19 @@ public class LogicSetController : MonoBehaviour {
 				break;
 			default: break;
 		}
+		wasPlayerVar = gc.playerVar;
+		GenerateTruthValues();
 	}
 
 	void GenerateTruthValues(){
-
+		switch(Question){
+			case 0:
+				Answers[0] = compareTo < wasPlayerVar;
+				Answers[1] = compareTo == wasPlayerVar;
+				Answers[2] = compareTo > wasPlayerVar;
+				break;
+			default: break;
+		}
 	}
 
 

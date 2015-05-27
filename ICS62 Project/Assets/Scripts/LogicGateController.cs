@@ -9,8 +9,7 @@ public class LogicGateController : MonoBehaviour {
 	public Material FalseMat;					//Changes iris color if answer was False
 	public Material TrueMat;					//Changes iris color if answer was True
 	Material DefaultMat;						//Sets iris to default color
-
-	bool booleanState = false;					//Depends if entering gate is false or true answer
+	
 	int selfIndex;								//Stores index iris is supposed to represent
 
 	// Use this for initialization
@@ -23,7 +22,6 @@ public class LogicGateController : MonoBehaviour {
 
 	void OnBecameVisible(){
 		lsc.ActivateLogicSet();
-		booleanState = lsc.Answers[selfIndex];
 	}
 
 	void OnTriggerEnter(Collider obj){
@@ -33,7 +31,7 @@ public class LogicGateController : MonoBehaviour {
 
 	//Delays gate resetting color back to default
 	IEnumerator ColorChange(){
-		if (booleanState)
+		if (lsc.Answers[selfIndex])
 			IrisMesh.material = TrueMat;
 		else
 			IrisMesh.material = FalseMat;
@@ -43,7 +41,7 @@ public class LogicGateController : MonoBehaviour {
 
 	void OnTriggerExit(Collider obj){
 		if (obj.tag == "Player" && !lsc.sameLap){
-			lsc.AnswerQuestion(booleanState);
+			lsc.AnswerQuestion(selfIndex);
 		}
 	}
 
