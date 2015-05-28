@@ -23,7 +23,7 @@ public class VehicleMovement : MonoBehaviour {
 		if (Physics.Raycast(transform.position, Vector3.down, out rcHit)){
 			float proportionalHeight = (hoverDist - rcHit.distance)/hoverDist;
 			Vector3 appliedForce = Vector2.up * proportionalHeight * hoverForce;
-			rb.AddForce(appliedForce, ForceMode.Acceleration);
+			rb.AddForce(appliedForce);
 			//groundDist = rcHit.distance;
 			//transform.rotation = Quaternion.FromToRotation(Vector3.up, rcHit.normal);
 			//newPosition = (newPosition - groundDist) + 1;
