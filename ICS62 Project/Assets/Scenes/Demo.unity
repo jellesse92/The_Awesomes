@@ -318,7 +318,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 6f0c41acf12cda244aa3521ae61684f0, type: 3}
 --- !u!1 &781206316
 GameObject:
@@ -545,27 +545,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.40162754
+      value: 4.39828873
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 85.6125336
+      value: 85.6108704
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -.0527713299
+      value: -.0488765277
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.892844558
+      value: -.892864466
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .00617411034
+      value: -.00159784616
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .447219908
+      value: .447662413
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_RootOrder
@@ -611,7 +611,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 32
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!64 &1814592585
 MeshCollider:
@@ -620,7 +620,7 @@ MeshCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1814592582}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
@@ -639,8 +639,8 @@ MonoBehaviour:
   speed: 30
   strafe: 20
   turnSpeed: 17
-  hoverForce: 60
-  hoverDist: 3
+  hoverForce: 100
+  hoverDist: 1.5
 --- !u!1 &1835584898
 GameObject:
   m_ObjectHideFlags: 0
