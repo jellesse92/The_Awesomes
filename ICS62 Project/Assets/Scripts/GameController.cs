@@ -14,10 +14,11 @@ public class GameController : MonoBehaviour {
 	public int playerVar = 0;
 	public bool isRaining = false;
 
-	//In-Game Objects
+	//In-Game Track Objects
 	public GameObject logicPanel;				//For controlling when Logic Gate panel appears
 	GameObject fireWall;						//Prevents player from going over loop iteration
 	GameObject rain;							//Rain effect that activates if raining
+	GameObject startLine;						//Controls if startLine is still a trigger
 	
 
 	//GUI Text
@@ -39,9 +40,10 @@ public class GameController : MonoBehaviour {
 	//IMPORTANT. Always have the GameObjects with the tag Firewall/Rain if using GameController script in
 	//scene
 	void Awake(){
-		AttachGameObject(ref fireWall, "Firewall");
 		AttachGameObject(ref rain, "Rain");
 		AttachGameObject(ref logicPanel, "LogicPanel");
+		fireWall = GameObject.FindGameObjectWithTag("Firewall");
+		startLine = GameObject.FindGameObjectWithTag("StartLine");
 	}
 
 	// Use this for initialization
@@ -50,22 +52,21 @@ public class GameController : MonoBehaviour {
 		UpdateDebugText();
 		shellText.rawText = "";
 		logicText.rawText = "";
+
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		UpdateDebugText();
-
-	
-		//BEGIN OF TEST. [REMOVE]
-		//Debug.Log(BreakConditionMet());
+		UpdateTrackState();
 		UpdateRainState(isRaining);
-		functionText.text = string.Format(funcStrFor,rangeEnd,breakBool,breakCondition);
-		if(lapCount < 3)
-			IncLap();
-		if(lapCount == rangeEnd)
-			fireWall.SetActive(true);
-		//END OF TEST
+	}
+
+	void UpdateTrackState(){
+		if (lapCount >= rangeEnd || BreakConditionMet()){
+			startLine.GetComponent<MeshCollider>().isTrigger = false;
+			fireWall.SetActive(false);
+		}
 	}
 
 	//Attaches gameobject with given name to given gameobject. 
