@@ -69,7 +69,7 @@ public class LogicSetController : MonoBehaviour {
 	//Generates random function for billboard
 	void GenerateFunction(){
 		Question = Random.Range(0,0);
-		compareTo = Random.Range(0,10);
+		compareTo = Random.Range(-10,10);
 		string[] setGateValues = {"","",""};				
 		switch(Question){
 			case 0:
