@@ -10,7 +10,8 @@ public class LogicSetController : MonoBehaviour {
 	public bool sameLap = false;						//To prevent reapplying logic for iris triggers on same lap
 	public bool[] Answers;								//Applies logic for each gate
 	string[] compValues = {"<","==",">"};				//Gate values for comparison
-	
+
+
 	Text logicPanelText;								//For changing what displays in the logic text
 	int compareTo;										//Value to compare to player variable
 	int wasPlayerVar;									//Gets player var at time question initiated
@@ -27,9 +28,11 @@ public class LogicSetController : MonoBehaviour {
 	//Called every time an element of the gate becomes visible from the camera view. May reset every time
 	//its called without the "if" statement that allows the reset only when the player has made another lap
 	public void ActivateLogicSet(){
-		if(currentLap != gc.lapCount)
+		if(currentLap != gc.lapCount){
+			sameLap = false;
 			currentLap = gc.lapCount;
 			GenerateFunction();
+		}
 	}
 
 	//After player passes under the gate, briefly shows the result of the answer
@@ -53,10 +56,12 @@ public class LogicSetController : MonoBehaviour {
 	}
 
 	public void AnswerQuestion(int index){
-		if(Question == 0)							//If the question was to set Raining state,
-			gc.UpdateRainState(Answers[index]);				//set raining state based on bool answer
-		sameLap = true;
-		StartCoroutine(ShowResult(index));
+		if (!sameLap){
+			if(Question == 0)							//If the question was to set Raining state,
+				gc.UpdateRainState(Answers[index]);				//set raining state based on bool answer
+			sameLap = true;
+			StartCoroutine(ShowResult(index));
+		}
 	}
 
 

@@ -11,6 +11,7 @@ TagManager:
   - Break
   - PlusEQ
   - MinusEQ
+  - StartLine
   layers:
   - Default
   - TransparentFX
