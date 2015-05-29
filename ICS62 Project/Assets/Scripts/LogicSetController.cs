@@ -63,19 +63,21 @@ public class LogicSetController : MonoBehaviour {
 	//WIP
 	//Generates random function for billboard
 	void GenerateFunction(){
+		Question = Random.Range(0,0);
 		compareTo = Random.Range(0,10);
 		string[] setGateValues = {"","",""};				
 		switch(Question){
 			case 0:
 				logicPanelText.text = string.Format("\tRaining = eval('{0}' + Gate[ n ] + 'Player_Var')",compareTo);
-				gc.SetLogicText(string.Format("Raining = " +
-			                              "\teval('{0}' + _ + '{1}')\n" +
+				gc.SetLogicText(string.Format("eval( Raining = " +
+			                              "'{0}' + _ + '{1}')\n" +
 			                              "\n\tGate = [\"<\", \"==\", \">\"]\n\n" +
 			                              "\tFill in the Blank:\n" +
 			                              "\tGate[0] = '{2}'\n" +
 			                              "\tGate[1] = '{3}'\n" +
 			                              "\tGate[2] = '{4}'\n",compareTo,gc.playerVar,compValues[0],compValues[1],compValues[2]));
 				break;
+		case 1:
 			default: break;
 		}
 		wasPlayerVar = gc.playerVar;
