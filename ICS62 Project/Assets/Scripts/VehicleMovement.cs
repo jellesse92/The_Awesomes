@@ -8,12 +8,12 @@ public class VehicleMovement : MonoBehaviour {
 	public float turnSpeed;
 	public float hoverForce;
 	public float hoverDist;
+	public bool escape;
 	private Rigidbody rb;
 	private float groundDist;
-	private bool track;
 	void Start(){
 		rb = GetComponent<Rigidbody>();
-		track = false;
+		escape = false;
 	}
 
 	void FixedUpdate(){
@@ -30,7 +30,7 @@ public class VehicleMovement : MonoBehaviour {
 
 
 	void Update(){
-		if (track){
+		if (escape){
 			if (Input.GetKey(KeyCode.W)){
 				transform.Translate(0.0f,0.0f, speed * Time.deltaTime);
 			}

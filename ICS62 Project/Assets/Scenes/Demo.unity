@@ -470,6 +470,7 @@ GameObject:
   - 33: {fileID: 1501500265}
   - 65: {fileID: 1501500264}
   - 23: {fileID: 1501500263}
+  - 114: {fileID: 1501500267}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -526,12 +527,23 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1501500262}
-  m_LocalRotation: {x: -.0537985601, y: -.157451838, z: -.00860306527, w: .986022651}
-  m_LocalPosition: {x: -35.7700005, y: 9.10000038, z: 106.620003}
+  m_LocalRotation: {x: -.0528583676, y: -.241739318, z: -.0132018477, w: .968810499}
+  m_LocalPosition: {x: -50.4000015, y: 9.10000038, z: 99.9000015}
   m_LocalScale: {x: 1, y: 15, z: 45}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &1501500267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1501500262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26cc3475e07ec124d96ff858b7b19145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1689622245
 Prefab:
   m_ObjectHideFlags: 0
@@ -541,31 +553,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -57.4088135
+      value: -64.5999985
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.39828873
+      value: 4.40416241
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 85.6108704
+      value: 77.9020615
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -.0488765277
+      value: -.0537265837
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.892864466
+      value: -.892829299
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.00159784616
+      value: .00808142871
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .447662413
+      value: .447106242
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d7334d2aa198afa418c51eb9e33819b3, type: 2}
       propertyPath: m_RootOrder
@@ -636,11 +648,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4b880ff2e36164ba502c809e4c9a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 20
   strafe: 20
-  turnSpeed: 17
+  turnSpeed: 11
   hoverForce: 100
   hoverDist: 1.5
+  escape: 0
 --- !u!1 &1835584898
 GameObject:
   m_ObjectHideFlags: 0
