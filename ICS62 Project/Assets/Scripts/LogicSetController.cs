@@ -28,6 +28,8 @@ public class LogicSetController : MonoBehaviour {
 	//Called every time an element of the gate becomes visible from the camera view. May reset every time
 	//its called without the "if" statement that allows the reset only when the player has made another lap
 	public void ActivateLogicSet(){
+		if (!sameLap)
+			gc.logicPanel.SetActive(true);
 		if(currentLap != gc.lapCount){
 			sameLap = false;
 			currentLap = gc.lapCount;

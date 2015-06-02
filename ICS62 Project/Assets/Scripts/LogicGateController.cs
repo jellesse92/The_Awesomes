@@ -11,6 +11,8 @@ public class LogicGateController : MonoBehaviour {
 	Material DefaultMat;						//Sets iris to default color
 	
 	int selfIndex;								//Stores index iris is supposed to represent
+	int currentLap = -1;
+	bool visible = false;						//For activating logic panel while in view
 
 	// Use this for initialization
 	void Awake () {
@@ -21,7 +23,16 @@ public class LogicGateController : MonoBehaviour {
 	}
 
 	void OnBecameVisible(){
-		lsc.ActivateLogicSet();
+		visible = true;
+	}
+
+	void OnBecameInvisible(){
+		visible = false;
+	}
+
+	void FixedUpdate(){
+		if (visible)
+			lsc.ActivateLogicSet();
 	}
 
 	void OnTriggerEnter(Collider obj){
