@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 	public int rangeEnd = 5;
 	public string breakBool = "==";				//Boolean condition to break out of loop early
 	public int breakCondition = 7;				//Condition to break out of loop early
+	VehicleMovement vm;							//For controlling exit for player
 
 	//In-Game Player Variables
 	public int lapCount = 0;					//Counts number of laps player has made
@@ -44,6 +45,7 @@ public class GameController : MonoBehaviour {
 		AttachGameObject(ref logicPanel, "LogicPanel");
 		fireWall = GameObject.FindGameObjectWithTag("Firewall");
 		startLine = GameObject.FindGameObjectWithTag("StartLine");
+		vm = GameObject.FindGameObjectWithTag("Player").GetComponent<VehicleMovement>();
 	}
 
 	// Use this for initialization
@@ -52,6 +54,7 @@ public class GameController : MonoBehaviour {
 		UpdateDebugText();
 		shellText.rawText = "";
 		logicText.rawText = "";
+		vm.escape = false;
 
 	}
 	
@@ -66,6 +69,7 @@ public class GameController : MonoBehaviour {
 		if (lapCount >= rangeEnd || BreakConditionMet()){
 			startLine.GetComponent<MeshCollider>().isTrigger = false;
 			fireWall.SetActive(false);
+			vm.escape = true;
 		}
 	}
 
