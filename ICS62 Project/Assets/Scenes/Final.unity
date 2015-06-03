@@ -262,7 +262,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!21 &519883124
 Material:
   serializedVersion: 5
@@ -413,6 +413,10 @@ Prefab:
       propertyPath: rangeEnd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11467118, guid: 338e7083f3c4e6c4493c4c0360a89bbc, type: 2}
+      propertyPath: playerVar
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 338e7083f3c4e6c4493c4c0360a89bbc, type: 2}
   m_IsPrefabParent: 0
@@ -553,6 +557,33 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 449818, guid: 27a136e6e2948104594f186c31a7c410, type: 2}
   m_PrefabInternal: {fileID: 1759131254}
+--- !u!1 &814455860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 814455861}
+  m_Layer: 0
+  m_Name: BreakPortal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &814455861
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 814455860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -146.800003, y: 7.94000006, z: 4.01000023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1001 &1165713669
 Prefab:
   m_ObjectHideFlags: 0
@@ -628,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   strafe: 20
-  turnSpeed: 11
+  turnSpeed: 12
   hoverForce: 100
   hoverDist: 1.5
   escape: 0
@@ -718,7 +749,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!21 &1231197398
 Material:
   serializedVersion: 5
@@ -1016,234 +1047,242 @@ Prefab:
       objectReference: {fileID: 2089699696}
     - target: {fileID: 13127274, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 842
+      value: 351
       objectReference: {fileID: 0}
     - target: {fileID: 13127274, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.width
-      value: 428
+      value: 186
       objectReference: {fileID: 0}
     - target: {fileID: 13127274, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.height
-      value: 281
+      value: 138
       objectReference: {fileID: 0}
     - target: {fileID: 13112734, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.width
-      value: 344
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 13112734, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.height
-      value: 191
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 13256254, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelOffset.y
-      value: 538
+      value: 199
       objectReference: {fileID: 0}
     - target: {fileID: 13185432, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 1222
+      value: 489
       objectReference: {fileID: 0}
     - target: {fileID: 13185432, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 261
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 13115838, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 1199
+      value: 466
       objectReference: {fileID: 0}
     - target: {fileID: 13115838, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 38
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 13249798, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelOffset.y
-      value: 490
+      value: 151
       objectReference: {fileID: 0}
     - target: {fileID: 13168574, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 380
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 13168574, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 261
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 13152188, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 332
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 13152188, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.width
-      value: 242
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 13152188, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.height
-      value: 168
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 13233474, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelOffset.x
-      value: 864
+      value: 373
       objectReference: {fileID: 0}
     - target: {fileID: 13233474, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelOffset.y
-      value: 541
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 13137526, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 1199
+      value: 466
       objectReference: {fileID: 0}
     - target: {fileID: 13137526, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 195
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 13152586, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 1199
+      value: 466
       objectReference: {fileID: 0}
     - target: {fileID: 13152586, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 58
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 13152586, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.height
-      value: 137
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 13193104, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 1222
+      value: 489
       objectReference: {fileID: 0}
     - target: {fileID: 13193104, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 542
+      value: 213
       objectReference: {fileID: 0}
     - target: {fileID: 13142838, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 884
+      value: 393
       objectReference: {fileID: 0}
     - target: {fileID: 13142838, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 312
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 13142838, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.width
-      value: 354
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 13142838, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.height
-      value: 191
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 13236560, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelOffset.y
-      value: 260
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 13215542, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelOffset.x
-      value: 864
+      value: 373
       objectReference: {fileID: 0}
     - target: {fileID: 13215542, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelOffset.y
-      value: 260
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 13180664, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.width
-      value: 418
+      value: 186
       objectReference: {fileID: 0}
     - target: {fileID: 13180664, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.height
-      value: 281
+      value: 138
       objectReference: {fileID: 0}
     - target: {fileID: 13142986, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 1199
+      value: 466
       objectReference: {fileID: 0}
     - target: {fileID: 13142986, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 175
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 13184578, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 278
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 13184578, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 539
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 13258186, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelOffset.x
-      value: 896
+      value: 405
       objectReference: {fileID: 0}
     - target: {fileID: 13258186, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelOffset.y
-      value: 493
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 13119080, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 301
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 13119080, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.width
-      value: 316
+      value: 186
       objectReference: {fileID: 0}
     - target: {fileID: 13119080, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.height
-      value: 258
+      value: 138
       objectReference: {fileID: 0}
     - target: {fileID: 13173394, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 884
+      value: 393
       objectReference: {fileID: 0}
     - target: {fileID: 13173394, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 28
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 13173394, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.width
-      value: 345
+      value: 103
       objectReference: {fileID: 0}
     - target: {fileID: 13173394, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.height
-      value: 197
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 13186376, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.x
-      value: 842
+      value: 351
       objectReference: {fileID: 0}
     - target: {fileID: 13186376, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 281
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 13186376, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.width
-      value: 428
+      value: 186
       objectReference: {fileID: 0}
     - target: {fileID: 13186376, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.height
-      value: 281
+      value: 138
       objectReference: {fileID: 0}
     - target: {fileID: 11457242, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: parentpos.right
-      value: 1280
+      value: 525
       objectReference: {fileID: 0}
     - target: {fileID: 11457242, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: parentpos.bottom
-      value: 562
+      value: 233
       objectReference: {fileID: 0}
     - target: {fileID: 11457242, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: absolute.right
-      value: 1280
+      value: 525
       objectReference: {fileID: 0}
     - target: {fileID: 11457242, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: absolute.bottom
-      value: 562
+      value: 233
       objectReference: {fileID: 0}
     - target: {fileID: 13180664, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 0
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 13112734, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
-      value: 31
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 13127274, guid: 4920b00379d605a4192b328cadc90391, type: 2}
       propertyPath: m_PixelInset.y
+      value: -21
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457242, guid: 4920b00379d605a4192b328cadc90391, type: 2}
+      propertyPath: pointed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457242, guid: 4920b00379d605a4192b328cadc90391, type: 2}
+      propertyPath: pointedOnBackground
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

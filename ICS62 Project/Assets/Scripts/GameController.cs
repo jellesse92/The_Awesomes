@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
 	public string breakBool = "==";				//Boolean condition to break out of loop early
 	public int breakCondition = 7;				//Condition to break out of loop early
 	VehicleMovement vm;							//For controlling exit for player
+	bool breakOnce;									//For triggering break condition only once
 
 	//In-Game Player Variables
 	public int lapCount = 0;					//Counts number of laps player has made
@@ -20,6 +21,7 @@ public class GameController : MonoBehaviour {
 	GameObject fireWall;						//Prevents player from going over loop iteration
 	GameObject rain;							//Rain effect that activates if raining
 	GameObject startLine;						//Controls if startLine is still a trigger
+	GameObject vehicle;
 	
 
 	//GUI Text
@@ -46,6 +48,7 @@ public class GameController : MonoBehaviour {
 		fireWall = GameObject.FindGameObjectWithTag("Firewall");
 		startLine = GameObject.FindGameObjectWithTag("StartLine");
 		vm = GameObject.FindGameObjectWithTag("Player").GetComponent<VehicleMovement>();
+		vehicle = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	// Use this for initialization
@@ -55,7 +58,7 @@ public class GameController : MonoBehaviour {
 		shellText.rawText = "";
 		logicText.rawText = "";
 		vm.escape = false;
-
+		breakOnce = false;
 	}
 	
 	// Update is called once per frame
@@ -70,6 +73,12 @@ public class GameController : MonoBehaviour {
 			startLine.GetComponent<MeshCollider>().isTrigger = false;
 			fireWall.SetActive(false);
 			vm.escape = true;
+		}
+		if (BreakConditionMet() && breakOnce == false){
+			vm.escape = true;
+			vehicle.transform.position = GameObject.Find("BreakPortal").transform.position;
+			vehicle.transform.eulerAngles = new Vector3(358.0f, 233.0f ,6.0f);
+			breakOnce = true;
 		}
 	}
 
