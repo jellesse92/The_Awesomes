@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour {
 		"\t\tPickUpToBreak ( )\n" +
 		"\telse:\n" +
 		"\t\tprint('Keep going!')";
-	static string gameVar = "Lap = {0}\nPlayer_Var = {1}\nisRaining = {2}";
+	static string gameVar = "Lap = {0}\nPlayer_Var = {1}\nisRaining = {2}\nTime = {3:0.0}";
 	static string printStatement = "Keep going!\n";
 
 	//IMPORTANT. Always have the GameObjects with the tag Firewall/Rain if using GameController script in
@@ -90,7 +90,7 @@ public class GameController : MonoBehaviour {
 
 	//Updates GUI text display for the debugger view
 	public void UpdateDebugText(){
-		debugText.rawText = string.Format(gameVar,lapCount,playerVar,isRaining);
+		debugText.rawText = string.Format(gameVar,lapCount,playerVar,isRaining,Time.fixedTime);
 	}
 
 	public void SetLogicText(string str){
