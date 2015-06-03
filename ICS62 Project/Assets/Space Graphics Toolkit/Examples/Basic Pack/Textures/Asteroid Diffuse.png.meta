@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 711a5b1e605be9b41a5ddf4be4444bc7
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Asteroid Diffuse_0
+    21300002: Asteroid Diffuse_1
+    21300004: Asteroid Diffuse_2
+    21300006: Asteroid Diffuse_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

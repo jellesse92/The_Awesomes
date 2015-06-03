@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 39033a7a33c0e474facbb6937534c469
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Asteroid Depth_0
+    21300002: Asteroid Depth_1
+    21300004: Asteroid Depth_2
+    21300006: Asteroid Depth_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
